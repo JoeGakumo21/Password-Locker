@@ -22,7 +22,19 @@ class  TestUser(unittest.TestCase):
 
         self.assertEqual(self.new_user.username,"Joseph Gakumo")
         self.assertEqual(self.new_user.password,"Joegakumo123456")
-     #second test
+        # self.assertEqual(self.new_user.accountname,"Facebook")
+        # self.assertEqual(self.new_user.fullname," Joseph Gakumo")
+        # self.assertEqual(self.new_user.email,"joegakumo1@gmail.com")
+
+    #creation of tearDown here
+    def tearDown(self):
+         '''
+        tearDown method that does clean up after each test case has run. 
+         '''
+         User.user_list=[]
+    
+
+    #second test
     def test_save_user(self):
         '''
         test_save_user_details test case to test if the user object is saved into
@@ -30,7 +42,8 @@ class  TestUser(unittest.TestCase):
         '''
         self.new_user.save_user() # saving the new contact
         self.assertEqual(len(User.user_list),1)
-     #third test 
+
+    #third test 
     def test_save_multiple_users(self):
         '''
         method to save multiple account in the same user locker password
@@ -38,7 +51,7 @@ class  TestUser(unittest.TestCase):
         self.new_user.save_user()
         test_user=User("Joseph Gakumo", "Joegakumo1234455")
         test_user.save_user()
-        self.assertEqual(len(User.user_list),2)    
-    
-    if __name__ == '__main__':
-         unittest.main()   
+        self.assertEqual(len(User.user_list),2)
+
+if __name__ == '__main__':
+    unittest.main()

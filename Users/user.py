@@ -1,7 +1,7 @@
 #import userDetails.py
 from .userDetails import read_from_file, write_to_file
 
-data_file = "users.css"
+data_file = "users.csv"
 
 class User:
     '''
@@ -23,6 +23,7 @@ class User:
         '''        
         saving Users
         '''     
+        write_to_file(data_file, self)
         User.users.append(self)
 
         #method to display username in string

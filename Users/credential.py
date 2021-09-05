@@ -1,7 +1,9 @@
 from .user import User
 import random
 import string
+from .userDetails import read_from_file, write_to_file
 
+data_file = "credentials.csv"
 class Credentials:
     '''
     This class handles credentials of our user
@@ -41,6 +43,7 @@ class Credentials:
                 return our_user_details
 
     def save_credentials(self):
+        write_to_file(data_file,self)
         Credentials.credentials.append(self)
 
     print(credentials)     
@@ -58,6 +61,8 @@ class Credentials:
         '''
         method that displays the account details
         '''
+        read_from_file("users.csv")
+        read_from_file("credentials.csv")
         return cls.credentials            
     @classmethod
     def delete_credentials(cls,account):

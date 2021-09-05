@@ -1,6 +1,6 @@
 class User:
     '''
-    A user class
+    A user class initialization
     '''
 
     users= []

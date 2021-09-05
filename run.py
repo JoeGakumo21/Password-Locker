@@ -135,7 +135,13 @@ def password_locker_main():
                 save_credentials(create_credentials(account, username, password))
                 print(f" Credentials for  {account}  created successfuly")
         elif logged_in_details =="2":
-                        
+            '''
+            method to search credential for an existing user
+             '''
+            print("Great! Let's search credentials")
+            account = input("Enter your account name: ")
+            search_credentials(account) 
+            
 
 if __name__ == "__main__":
         password_locker_main()

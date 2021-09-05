@@ -18,7 +18,7 @@ no known bugs
 # Technology used
 Python3
 # Licence
-<a href=" https://choosealicense.com/licenses/mit/">MIT LICENCE</a>
+Click this link to access the licence <a href=" https://choosealicense.com/licenses/mit">MIT LICENCE</a>
 * Joseph Gakumo Munyui &copy; 2021
 # screenshot
 <img src="python.png">

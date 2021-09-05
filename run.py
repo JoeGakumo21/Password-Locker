@@ -66,13 +66,20 @@ def generate_credentials():
     '''    
     auto_generate_password_user= Credentials.generate_credentials_password()
     return auto_generate_password_user
-    
 
 
 
+def password_locker_main():
+    '''
+    This is the main function that will be called to execute the program
+    '''
+    welcome_message="Hello, welcome to Password Locker Account creation\nFollow the following steps to create accout or Login in\n 1. You new here, Create a new Account\n 2. Have one already Created , Kindly login"
+    user_input= input(welcome_message).lower().strip()
 
 
 
+if __name__ == "__main__":
+        password_locker_main()
 
 
 

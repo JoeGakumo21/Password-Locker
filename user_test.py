@@ -62,7 +62,54 @@ class CredentialTest(unittest.TestCase):
         '''
           Set up method to run before each test cases.
         '''
-       
+        self.credentials = Credentials('Instagram','Joseph Gakumo','Joegakumo123345')
+
+    def test_create_credentials(self):
+        '''
+        test to create a new credential of a new user
+        '''
+        self.assertEqual(self.credentials.account, 'Instagram')
+        self.assertEqual(self.credentials.username, 'Joseph Gakumo')
+        self.assertEqual(self.credentials.password, 'Joegakumo123345')
+
+    def test_save_credentials(self):
+        '''
+        test to save a new user credentials
+        '''
+        Credentials.credentials = []
+        self.credentials.save_credentials()
+        self.assertEqual(len(Credentials.credentials), 1)
+    
+    def test_save_multiple_credentials(self):
+        '''
+        test to save multiple credentials provided by a user
+        '''
+        Credentials.credentials = []
+        self.credentials.save_credentials()
+        test_credentials = Credentials('test','test','test')
+        test_credentials.save_credentials()
+        self.assertEqual(len(Credentials.credentials), 2)
+
+    # def test_delete_credentials(self):
+    #     # Credentials.credentials = []
+    #     self.credentials.save_credentials()
+    #     test_credentials = Credentials('test','test','test')
+    #     test_credentials.save_credentials()
+    #     self.credentials.delete_credentials(test_credentials.account)
+    #     self.assertEqual(len(Credentials.credentials), 1)
+    
+    def test_find_credentials(self):
+        '''
+        test to find credentials of a user
+        '''
+        self.credentials.save_credentials()
+        test_credentials = Credentials('test','test','test')
+        test_credentials.save_credentials()
+        found_credentials = Credentials.search_credentials('test')
+        # self.assertEqual(found_credentials.account, test_credentials.account)
+
+    def tearDown(self):
+        Credentials.credentials = []   
 
 if __name__ == '__main__':
     unittest.main()

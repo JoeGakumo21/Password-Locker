@@ -1,3 +1,8 @@
+#import userDetails.py
+from .userDetails import read_from_file, write_to_file
+
+data_file = "users.css"
+
 class User:
     '''
     A user class initialization

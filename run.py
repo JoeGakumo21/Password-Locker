@@ -36,6 +36,40 @@ def create_credentials(account, username, password):
     new_credential= Credentials(account, password, username)
     return new_credential
 
+def save_credentials(credentials):
+    '''
+    method to save a new created  credentials of the account 
+    '''
+    Credentials.save_credentials(credentials)
+
+def delete_credentials(credentials):
+    '''
+    method to delete a credentials
+    '''
+    Credentials.delete_credentials(credentials)
+
+def search_credentials(account):
+    '''
+    method that allow search an existing credential
+    '''
+    return Credentials.search_credentials(account)
+
+def show_all_credentials():
+    '''
+    method to display all the credentials of a user
+    '''
+    return Credentials.display_credentials()
+
+def generate_credentials():
+    '''
+    method to generate password
+    '''    
+    auto_generate_password_user= Credentials.generate_credentials_password()
+    return auto_generate_password_user
+    
+
+
+
 
 
 

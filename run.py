@@ -73,10 +73,10 @@ def password_locker_main():
     '''
     This is the main function that will be called to execute the program
     '''
-    welcome_message="Hello, welcome to Password Locker Account creation\nFollow the following steps to create accout or Login in \n 1. You new here, Create a new Account\n 2. Have one already Created , Kindly login"
+    welcome_message="Hello, welcome to Password Locker Account creation \n Follow the following steps to create accout or Login in \n 1. You new here, Create a new Account \n 2. Have one already Created , Kindly login \n"
     user_input= input(welcome_message).lower().strip()
-
-    print(user_input)
+    
+    # print(user_input)
 
     if user_input == "1":
         print("Great! Welcome to password Locker account creation")
@@ -100,8 +100,25 @@ def password_locker_main():
         save_our_user(create_our_user(username, password)) 
         print(f"Hellow {username} Your account has been created successfully and your password is {password}")      
             
+    elif user_input == "2":
+        print ("Great! Welcome back, lets Login\n")
+        username = input("Enter your username: ")
+        password =input("Enter your password: ")
+        details_verification= login(username, password)
+        if details_verification == login(username, password):
+            print (f"Welcome back {username} Your accounts details matched and account verified")
+        else:
+            print("Invalid uisername or Password, Kindly try another means")    
 
-
+    while True:
+        logged_in_details = """
+        1. Create credentials for new person \n
+        2. Search credentials  for the existing user \n
+        3. Display credential  for the users \n
+        4. Delete credentials for the user \n
+        """
+        logged_in_details= input(logged_in_details).lower().strip()
+        
 
 if __name__ == "__main__":
         password_locker_main()

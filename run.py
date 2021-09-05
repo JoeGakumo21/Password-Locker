@@ -14,7 +14,7 @@ def save_our_user(user):
     '''
     method to save the user created
     '''    
-    user.save_user_created()
+    user.save_user()
 
 def show_user(user):
     '''
@@ -73,8 +73,33 @@ def password_locker_main():
     '''
     This is the main function that will be called to execute the program
     '''
-    welcome_message="Hello, welcome to Password Locker Account creation\nFollow the following steps to create accout or Login in\n 1. You new here, Create a new Account\n 2. Have one already Created , Kindly login"
+    welcome_message="Hello, welcome to Password Locker Account creation\nFollow the following steps to create accout or Login in \n 1. You new here, Create a new Account\n 2. Have one already Created , Kindly login"
     user_input= input(welcome_message).lower().strip()
+
+    print(user_input)
+
+    if user_input == "1":
+        print("Great! Welcome to password Locker account creation")
+        username=input("Enter your password: ")
+        while True:
+            '''
+            method that allow user to choose whether to create password or it be generated
+            '''
+            password_message= """
+            1. create a pasword for the account\n
+            2. use a generated password\n
+            """
+            password_message= input(password_message).lower().strip()
+            if password_message == "1":
+                password = input("Enter your password: ")
+            elif password_message == "2":
+                password =generate_credentials()
+                break 
+            else:
+                print("Invalid Password")
+        save_our_user(create_our_user(username, password)) 
+        print(f"Hellow {username} Your account has been created successfully and your password is {password}")      
+            
 
 
 

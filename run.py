@@ -25,3 +25,26 @@ class User:
         method to display all details of user
         '''
         print(f"Your username is:{self.username}   and your password is:{self.password}")
+# added the credential class
+
+credentians_list=[]
+class Credentians:
+    '''
+    this class generate new instances of credentials to class user
+    '''
+    def __init__(self, account,fullname,phonenumber,email ):
+        '''
+        method that help populate the user  created
+        '''
+        self.account=account
+        self.fullname=fullname
+        self.phonenumber=phonenumber
+        self.email=email
+
+    def user_details(self):
+        '''
+        method to create credentials of the user
+        '''
+        Credentians.credential_list.append()
+        print(f"{self.account}{self.fullname}{self.phonenumber}{self.email}")
+

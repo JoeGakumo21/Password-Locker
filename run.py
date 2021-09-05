@@ -118,7 +118,24 @@ def password_locker_main():
         4. Delete credentials for the user \n
         """
         logged_in_details= input(logged_in_details).lower().strip()
-        
+        if logged_in_details == "1":
+            print ("Great  lets create a new credentials")
+            account= input("Enter account  to print: ")
+            username= input("Enter your username: ")
+            my_pass_message = """
+            1. Create a password for the account\n
+            2. Use a generated password\n
+            """
+            response=input(my_pass_message).lower().strip()
+            if response == "1":
+                password = input("Enter your password: ")
+                print(f"Your credentials for  {account} created successfully")
+            elif response== "2":
+                password=generate_credentials()
+                save_credentials(create_credentials(account, username, password))
+                print(f" Credentials for  {account}  created successfuly")
+        elif logged_in_details =="2":
+                        
 
 if __name__ == "__main__":
         password_locker_main()

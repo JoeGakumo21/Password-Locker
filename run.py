@@ -141,7 +141,17 @@ def password_locker_main():
             print("Great! Let's search credentials")
             account = input("Enter your account name: ")
             search_credentials(account) 
-            
+        elif logged_in_details == "3":
+            '''
+            function to show details of the credential
+            '''   
+            if show_all_credentials():
+                print("Great! Let's display credentials\n")
+                print("Here's a list of all your credentials\n")
+                for credentials in show_all_credentials():
+                    print(f'Account: {credentials.account}\nUsername: {credentials.username}\nPassword: {credentials.password} \n')
+            else:
+                print("You don't have any credentials saved yet")
 
 if __name__ == "__main__":
         password_locker_main()
